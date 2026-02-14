@@ -79,7 +79,66 @@ private fun DailyBudgetSection() {
 
 @Composable
 private fun TodayExpenseSummarySection() {
-    // Placeholder for Section 2
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(bottom = 16.dp),
+        colors = CardDefaults.cardColors()
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp)
+        ) {
+            Text(
+                text = "Today's Summary",
+                fontSize = 14.sp,
+                fontWeight = FontWeight.Normal
+            )
+            
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 12.dp),
+                horizontalArrangement = androidx.compose.foundation.layout.Arrangement.SpaceBetween
+            ) {
+                Column {
+                    Text(
+                        text = "Spent",
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Normal
+                    )
+                    Text(
+                        text = "$15.50",
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+                Column {
+                    Text(
+                        text = "Remainder",
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Normal
+                    )
+                    Text(
+                        text = "$17.83",
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+                Column {
+                    Text(
+                        text = "Accumulated",
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Normal
+                    )
+                    Text(
+                        text = "$5.25",
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+            }
+        }
+    }
 }
 
 @Composable
