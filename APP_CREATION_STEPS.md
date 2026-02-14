@@ -70,12 +70,155 @@
 - [x] Task 5.2: Define typography
 - [x] Task 5.3: Apply theme to all composables
 
-## Step 6: Build and Test
+## Step 7: Refactor to Clean Architecture (Feature-Based)
 
-- [x] Task 6.1: Sync Gradle
-- [x] Task 6.2: Build the project
-- [x] Task 6.3: Run on emulator or device
-- [x] Task 6.4: Verify all UI sections render correctly with dummy data
+Restructure codebase from flat structure to feature-based clean architecture:
+
+```
+app/src/main/java/com/imkaem/android/svarctoo/
+├── features/
+│   ├── home/
+│   │   ├── presentation/
+│   │   │   ├── screens/
+│   │   │   │   └── HomeScreen.kt
+│   │   │   └── viewmodel/
+│   │   │       └── HomeViewModel.kt
+│   │   ├── domain/
+│   │   ├── data/
+│   └── expenses/
+│       ├── presentation/
+│       │   ├── screens/
+│       │   │   └── ExpensesListScreen.kt
+│       │   └── viewmodel/
+│       │       └── ExpensesViewModel.kt
+│       ├── domain/
+│       │   ├── model/
+│       │   │   └── Expense.kt
+│       │   └── usecase/
+│       │       ├── GetExpensesUseCase.kt
+│       │       ├── AddExpenseUseCase.kt
+│       │       └── DeleteExpenseUseCase.kt
+│       └── data/
+│           ├── repository/
+│           │   └── ExpenseRepository.kt
+│           └── datasource/
+│               └── ExpenseDataSource.kt
+├── core/
+│   ├── theme/
+│   │   ├── Color.kt
+│   │   ├── Type.kt
+│   │   └── Theme.kt
+│   ├── models/
+│   │   └── DummyExpenseData.kt
+│   └── util/
+└── MainActivity.kt
+```
+
+- [ ] Task 7.1: Create feature folder structure under `features/`
+- [ ] Task 7.2: Create `features/home/presentation/screens/` and move HomeScreen.kt
+- [ ] Task 7.3: Create `core/` folder and move theme files
+- [ ] Task 7.4: Move DummyExpenseData.kt to `core/models/`
+- [ ] Task 7.5: Delete old `ui/` and `models/` folders
+- [ ] Task 7.6: Update all imports throughout the app
+
+## Step 8: Implement Data Layer Architecture
+
+Create repository and data source interfaces/implementations:
+
+- [ ] Task 8.1: Create `features/expenses/domain/model/Expense.kt` data class
+- [ ] Task 8.2: Create `features/expenses/domain/repository/ExpenseRepository.kt` interface
+  - `fun getExpenses(): List<Expense>`
+  - `fun getExpense(id: String): Expense`
+  - `fun addExpense(expense: Expense): Boolean`
+  - `fun updateExpense(expense: Expense): Boolean`
+  - `fun deleteExpense(id: String): Boolean`
+- [ ] Task 8.3: Create `features/expenses/data/datasource/ExpenseDataSource.kt` interface
+  - Same methods as repository
+- [ ] Task 8.4: Create `features/expenses/data/repository/ExpenseRepositoryImpl.kt` implementation
+  - Implement using dummy data via ExpenseDataSource
+- [ ] Task 8.5: Create `features/expenses/data/datasource/ExpenseDataSourceImpl.kt` implementation
+  - Use DummyExpenseData as backing store
+
+## Step 9: Implement Use Cases (Domain Layer)
+
+Create use cases for business logic:
+
+- [ ] Task 9.1: Create `features/expenses/domain/usecase/GetAllExpensesUseCase.kt`
+- [ ] Task 9.2: Create `features/expenses/domain/usecase/GetExpenseByIdUseCase.kt`
+- [ ] Task 9.3: Create `features/expenses/domain/usecase/AddExpenseUseCase.kt`
+- [ ] Task 9.4: Create `features/expenses/domain/usecase/UpdateExpenseUseCase.kt`
+- [ ] Task 9.5: Create `features/expenses/domain/usecase/DeleteExpenseUseCase.kt`
+- [ ] Task 9.6: Each UseCase takes a repository as constructor parameter
+
+## Step 10: Setup Dependency Injection with Hilt
+
+Configure Hilt for dependency injection:
+
+- [ ] Task 10.1: Add Hilt dependencies to build.gradle.kts
+- [ ] Task 10.2: Create `HiltApplication.kt` or annotate existing application class
+- [ ] Task 10.3: Create `features/expenses/di/ExpensesModule.kt` Hilt module
+  - Provide ExpenseDataSource implementation
+  - Provide ExpenseRepository implementation
+  - Provide all UseCases
+- [ ] Task 10.4: Create `core/di/CoreModule.kt` for shared dependencies (if needed)
+
+## Step 11: Connect Hilt to ViewModels and Inject Dependencies
+
+Inject dependencies into ViewModels:
+
+- [ ] Task 11.1: Create `features/home/presentation/viewmodel/HomeViewModel.kt`
+  - Inject necessary UseCases via constructor
+  - Use `@HiltViewModel` annotation
+- [ ] Task 11.2: Create `features/expenses/presentation/viewmodel/ExpensesViewModel.kt`
+  - Inject UseCases
+  - Use `@HiltViewModel` annotation
+- [ ] Task 11.3: Update `MainActivity.kt` to use `@AndroidEntryPoint`
+- [ ] Task 11.4: Update HomeScreen to accept and use HomeViewModel
+- [ ] Task 11.5: Verify Hilt injection works (build and test)
+
+## Step 12: Implement CRUD Operations with Dummy Data
+
+Test full application flow with dummy data (no database yet):
+
+- [ ] Task 12.1: Implement "Get All Expenses" - fetch and display in HomeScreen
+- [ ] Task 12.2: Implement "Add Expense" - create new expense and update state
+- [ ] Task 12.3: Implement "Update Expense" - modify existing expense
+- [ ] Task 12.4: Implement "Delete Expense" - remove expense from list
+- [ ] Task 12.5: Update HomeViewModel to populate UI state with real data from UseCases
+- [ ] Task 12.6: Update HomeScreen composables to display data from ViewModel state
+- [ ] Task 12.7: Test all CRUD operations with dummy data backing
+
+## Step 13: Implement Room Database
+
+Setup local persistent database with Room:
+
+- [ ] Task 13.1: Add Room dependencies to build.gradle.kts
+- [ ] Task 13.2: Create `features/expenses/data/local/database/ExpenseDatabase.kt` (Room database)
+- [ ] Task 13.3: Create `features/expenses/data/local/dao/ExpenseDao.kt` (Data Access Object)
+  - Define query functions matching CRUD operations
+- [ ] Task 13.4: Create `features/expenses/data/local/entity/ExpenseEntity.kt` (Room entity)
+  - Map domain Expense model to database entity
+- [ ] Task 13.5: Create entity/domain mappers to convert between ExpenseEntity and Expense
+
+## Step 14: Connect Data Layer to Room Database
+
+Replace dummy data with actual database operations:
+
+- [ ] Task 14.1: Update `features/expenses/data/datasource/ExpenseDataSourceImpl.kt`
+  - Replace dummy data logic with Room DAO calls
+- [ ] Task 14.2: Update Hilt module to provide Room database and DAO
+- [ ] Task 14.3: Test CRUD operations with Room database
+- [ ] Task 14.4: Verify data persists across app restarts
+
+## Step 15: Unit Testing
+
+Add comprehensive unit tests:
+
+- [ ] Task 15.1: Create tests for all UseCases
+- [ ] Task 15.2: Create tests for ViewModels
+- [ ] Task 15.3: Create tests for Repository implementations
+- [ ] Task 15.4: Add test dependencies (JUnit, Mockito, etc.)
+- [ ] Task 15.5: Ensure test coverage of happy path and error cases
 
 ## Deploy
 
