@@ -37,7 +37,7 @@
 - [x] Task 3.2: Build Section 1 - Daily budget header
   - Display current month's daily budget
   - Add "Add Expense" button
-- [ ] Task 3.3: Build Section 2 - Today's expense summary
+- [x] Task 3.3: Build Section 2 - Today's expense summary
   - Show total spent today
   - Show remainder for today (daily budget - spent)
   - Show accumulated remainder (leftover from previous days)
