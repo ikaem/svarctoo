@@ -81,3 +81,12 @@
 
 1. Generate signed APK or AAB
 2. Test on multiple devices
+
+## TODO
+
+NOTE: TODOs are not considered a STEP, and are not part of the regular workflow. Instead, they are meant to be done on demand only.
+
+- [ ] Implement scrolling of only recent expenses section without scrolling entire screen
+  - Allow users to scroll through expense list independently
+  - Keep top sections (Daily Budget, Today's Summary, Month Summary) fixed at top
+  - Better UX for browsing expenses without losing context
