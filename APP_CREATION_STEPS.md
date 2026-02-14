@@ -41,7 +41,7 @@
   - Show total spent today
   - Show remainder for today (daily budget - spent)
   - Show accumulated remainder (leftover from previous days)
-- [ ] Task 3.4: Build Section 3 - Current month summary
+- [x] Task 3.4: Build Section 3 - Current month summary
   - Show total spent this month
   - Show total remainder for month
   - Show total budget for month
