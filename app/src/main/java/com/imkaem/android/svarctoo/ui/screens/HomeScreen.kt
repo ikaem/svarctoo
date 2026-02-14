@@ -143,7 +143,66 @@ private fun TodayExpenseSummarySection() {
 
 @Composable
 private fun CurrentMonthSummarySection() {
-    // Placeholder for Section 3
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(bottom = 16.dp),
+        colors = CardDefaults.cardColors()
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp)
+        ) {
+            Text(
+                text = "This Month",
+                fontSize = 14.sp,
+                fontWeight = FontWeight.Normal
+            )
+            
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 12.dp),
+                horizontalArrangement = androidx.compose.foundation.layout.Arrangement.SpaceBetween
+            ) {
+                Column {
+                    Text(
+                        text = "Spent",
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Normal
+                    )
+                    Text(
+                        text = "$245.80",
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+                Column {
+                    Text(
+                        text = "Remainder",
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Normal
+                    )
+                    Text(
+                        text = "$754.20",
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+                Column {
+                    Text(
+                        text = "Budget",
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Normal
+                    )
+                    Text(
+                        text = "$1000.00",
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+            }
+        }
+    }
 }
 
 @Composable
