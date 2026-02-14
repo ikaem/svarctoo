@@ -34,7 +34,7 @@
 ## Step 3: Build Home Screen Layout
 
 - [x] Task 3.1: Create `HomeScreen` composable with vertical layout for 4 sections
-- [ ] Task 3.2: Build Section 1 - Daily budget header
+- [x] Task 3.2: Build Section 1 - Daily budget header
   - Display current month's daily budget
   - Add "Add Expense" button
 - [ ] Task 3.3: Build Section 2 - Today's expense summary
