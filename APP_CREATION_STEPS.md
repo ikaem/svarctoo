@@ -51,7 +51,7 @@
 
 ## Step 4: Render HomeScreen in MainActivity
 
-- [ ] Task 4.1: Update MainActivity to display the HomeScreen composable
+- [x] Task 4.1: Update MainActivity to display the HomeScreen composable
   - Import HomeScreen composable
   - Set HomeScreen as the content of the main composable function
   - Verify HomeScreen renders when app starts
