@@ -5,8 +5,11 @@
 ## Git Workflow
 
 - Create one branch per step with descriptive names (e.g., `feature/step-1-project-structure`, `feature/step-2-models-and-data`)
-- Commit after each subtask is completed
 - Branch from `master` for each step
+- Commit after each subtask is completed
+- After completing all tasks in a step, mark them as done in this file and commit
+- Wait for approval before starting the next step
+- Merge to `master` only after approval
 
 ## Prerequisites
 
@@ -25,8 +28,8 @@
 
 ## Step 2: Create Models & Dummy Data
 
-- [ ] Task 2.1: Create `Expense` data class with properties (id, description, amount, date, category)
-- [ ] Task 2.2: Create dummy expense data for testing
+- [x] Task 2.1: Create `Expense` data class with properties (id, description, amount, date, category)
+- [x] Task 2.2: Create dummy expense data for testing
 
 ## Step 3: Build Home Screen Layout
 
