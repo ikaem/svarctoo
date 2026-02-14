@@ -10,13 +10,12 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Divider
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.imkaem.android.svarctoo.models.DummyExpenseData
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
@@ -61,8 +60,7 @@ private fun DailyBudgetSection() {
         ) {
             Text(
                 text = "Daily Budget",
-                fontSize = 14.sp,
-                fontWeight = FontWeight.Normal
+                style = MaterialTheme.typography.bodyMedium
             )
             Row(
                 modifier = Modifier
@@ -72,8 +70,7 @@ private fun DailyBudgetSection() {
             ) {
                 Text(
                     text = "$33.33",
-                    fontSize = 28.sp,
-                    fontWeight = FontWeight.Bold
+                    style = MaterialTheme.typography.headlineLarge
                 )
                 Button(onClick = { /* TODO: Handle add expense */ }) {
                     Text("Add Expense")
@@ -96,8 +93,7 @@ private fun TodayExpenseSummarySection() {
         ) {
             Text(
                 text = "Today's Summary",
-                fontSize = 14.sp,
-                fontWeight = FontWeight.Normal
+                style = MaterialTheme.typography.bodyMedium
             )
             
             Row(
@@ -109,37 +105,31 @@ private fun TodayExpenseSummarySection() {
                 Column {
                     Text(
                         text = "Spent",
-                        fontSize = 12.sp,
-                        fontWeight = FontWeight.Normal
+                        style = MaterialTheme.typography.bodySmall
                     )
                     Text(
                         text = "$15.50",
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.Bold
+                        style = MaterialTheme.typography.titleLarge
                     )
                 }
                 Column {
                     Text(
                         text = "Remainder",
-                        fontSize = 12.sp,
-                        fontWeight = FontWeight.Normal
+                        style = MaterialTheme.typography.bodySmall
                     )
                     Text(
                         text = "$17.83",
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.Bold
+                        style = MaterialTheme.typography.titleLarge
                     )
                 }
                 Column {
                     Text(
                         text = "Accumulated",
-                        fontSize = 12.sp,
-                        fontWeight = FontWeight.Normal
+                        style = MaterialTheme.typography.bodySmall
                     )
                     Text(
                         text = "$5.25",
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.Bold
+                        style = MaterialTheme.typography.titleLarge
                     )
                 }
             }
@@ -160,8 +150,7 @@ private fun CurrentMonthSummarySection() {
         ) {
             Text(
                 text = "This Month",
-                fontSize = 14.sp,
-                fontWeight = FontWeight.Normal
+                style = MaterialTheme.typography.bodyMedium
             )
             
             Row(
@@ -173,37 +162,31 @@ private fun CurrentMonthSummarySection() {
                 Column {
                     Text(
                         text = "Spent",
-                        fontSize = 12.sp,
-                        fontWeight = FontWeight.Normal
+                        style = MaterialTheme.typography.bodySmall
                     )
                     Text(
                         text = "$245.80",
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.Bold
+                        style = MaterialTheme.typography.titleLarge
                     )
                 }
                 Column {
                     Text(
                         text = "Remainder",
-                        fontSize = 12.sp,
-                        fontWeight = FontWeight.Normal
+                        style = MaterialTheme.typography.bodySmall
                     )
                     Text(
                         text = "$754.20",
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.Bold
+                        style = MaterialTheme.typography.titleLarge
                     )
                 }
                 Column {
                     Text(
                         text = "Budget",
-                        fontSize = 12.sp,
-                        fontWeight = FontWeight.Normal
+                        style = MaterialTheme.typography.bodySmall
                     )
                     Text(
                         text = "$1000.00",
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.Bold
+                        style = MaterialTheme.typography.titleLarge
                     )
                 }
             }
@@ -224,8 +207,7 @@ private fun LatestExpensesSection() {
         ) {
             Text(
                 text = "Latest Expenses",
-                fontSize = 14.sp,
-                fontWeight = FontWeight.Normal,
+                style = MaterialTheme.typography.bodyMedium,
                 modifier = Modifier.padding(bottom = 12.dp)
             )
             
@@ -264,19 +246,16 @@ private fun ExpenseItem(
         ) {
             Text(
                 text = description,
-                fontSize = 12.sp,
-                fontWeight = FontWeight.Normal
+                style = MaterialTheme.typography.bodySmall
             )
             Text(
                 text = formatter.format(date),
-                fontSize = 10.sp,
-                fontWeight = FontWeight.Light
+                style = MaterialTheme.typography.labelSmall
             )
         }
         Text(
             text = "$$amount",
-            fontSize = 12.sp,
-            fontWeight = FontWeight.Bold
+            style = MaterialTheme.typography.bodySmall
         )
     }
     Divider()
