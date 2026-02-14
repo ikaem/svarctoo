@@ -17,11 +17,11 @@
 
 ## Step 1: Create Project Structure
 
-1. Create package structure:
-   - `com.example.svarcto.ui.screens`
-   - `com.example.svarcto.ui.theme`
-   - `com.example.svarcto.viewmodel`
-   - `com.example.svarcto.models`
+- [x] Task 1.1: Create package structure
+  - [x] `com.example.svarcto.ui.screens`
+  - [x] `com.example.svarcto.ui.theme`
+  - [x] `com.example.svarcto.viewmodel`
+  - [x] `com.example.svarcto.models`
 
 ## Step 2: Create Models & Dummy Data
 
