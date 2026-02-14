@@ -66,16 +66,16 @@
 
 ## Step 5: Create Theme & Styling
 
-- [ ] Task 5.1: Define color scheme
-- [ ] Task 5.2: Define typography
-- [ ] Task 5.3: Apply theme to all composables
+- [x] Task 5.1: Define color scheme
+- [x] Task 5.2: Define typography
+- [x] Task 5.3: Apply theme to all composables
 
 ## Step 6: Build and Test
 
-1. Sync Gradle
-2. Build the project
-3. Run on emulator or device
-4. Verify all UI sections render correctly with dummy data
+- [x] Task 6.1: Sync Gradle
+- [x] Task 6.2: Build the project
+- [x] Task 6.3: Run on emulator or device
+- [x] Task 6.4: Verify all UI sections render correctly with dummy data
 
 ## Step 7: Deploy
 
