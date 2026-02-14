@@ -5,11 +5,14 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Divider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -17,6 +20,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.imkaem.android.svarctoo.models.DummyExpenseData
+import java.time.ZoneId
+import java.time.format.DateTimeFormatter
 
 @Composable
 fun HomeScreen(
@@ -207,7 +213,73 @@ private fun CurrentMonthSummarySection() {
 
 @Composable
 private fun LatestExpensesSection() {
-    // Placeholder for Section 4
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(bottom = 16.dp),
+        colors = CardDefaults.cardColors()
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp)
+        ) {
+            Text(
+                text = "Latest Expenses",
+                fontSize = 14.sp,
+                fontWeight = FontWeight.Normal,
+                modifier = Modifier.padding(bottom = 12.dp)
+            )
+            
+            LazyColumn(
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                items(DummyExpenseData.sampleExpenses.take(5)) { expense ->
+                    ExpenseItem(
+                        amount = expense.amount,
+                        description = expense.description,
+                        date = expense.date
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun ExpenseItem(
+    amount: Double,
+    description: String,
+    date: java.time.Instant
+) {
+    val formatter = DateTimeFormatter.ofPattern("MMM d, h:mm a")
+        .withZone(ZoneId.systemDefault())
+    
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp),
+        horizontalArrangement = androidx.compose.foundation.layout.Arrangement.SpaceBetween
+    ) {
+        Column(
+            modifier = Modifier.weight(1f)
+        ) {
+            Text(
+                text = description,
+                fontSize = 12.sp,
+                fontWeight = FontWeight.Normal
+            )
+            Text(
+                text = formatter.format(date),
+                fontSize = 10.sp,
+                fontWeight = FontWeight.Light
+            )
+        }
+        Text(
+            text = "$$amount",
+            fontSize = 12.sp,
+            fontWeight = FontWeight.Bold
+        )
+    }
+    Divider()
 }
 
 @Preview(showBackground = true)
