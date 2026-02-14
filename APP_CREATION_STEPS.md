@@ -77,7 +77,7 @@
 - [x] Task 6.3: Run on emulator or device
 - [x] Task 6.4: Verify all UI sections render correctly with dummy data
 
-## Step 7: Deploy
+## Deploy
 
 1. Generate signed APK or AAB
 2. Test on multiple devices
