@@ -6,9 +6,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -28,23 +25,26 @@ import java.time.format.DateTimeFormatter
 fun HomeScreen(
     modifier: Modifier = Modifier
 ) {
-    Column(
+    LazyColumn(
         modifier = modifier
             .fillMaxSize()
-            .verticalScroll(rememberScrollState())
             .padding(16.dp)
     ) {
-        // Section 1: Daily budget header
-        DailyBudgetSection()
+        item {
+            DailyBudgetSection()
+        }
 
-        // Section 2: Today's expense summary
-        TodayExpenseSummarySection()
+        item {
+            TodayExpenseSummarySection()
+        }
 
-        // Section 3: Current month summary
-        CurrentMonthSummarySection()
+        item {
+            CurrentMonthSummarySection()
+        }
 
-        // Section 4: Latest expenses list
-        LatestExpensesSection()
+        item {
+            LatestExpensesSection()
+        }
     }
 }
 
@@ -229,10 +229,10 @@ private fun LatestExpensesSection() {
                 modifier = Modifier.padding(bottom = 12.dp)
             )
             
-            LazyColumn(
+            Column(
                 modifier = Modifier.fillMaxWidth()
             ) {
-                items(DummyExpenseData.sampleExpenses.take(5)) { expense ->
+                DummyExpenseData.sampleExpenses.take(5).forEach { expense ->
                     ExpenseItem(
                         amount = expense.amount,
                         description = expense.description,
