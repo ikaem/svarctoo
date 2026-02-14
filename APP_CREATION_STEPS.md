@@ -45,7 +45,7 @@
   - Show total spent this month
   - Show total remainder for month
   - Show total budget for month
-- [ ] Task 3.5: Build Section 4 - Latest expenses list
+- [x] Task 3.5: Build Section 4 - Latest expenses list
   - Display recent expenses in brief format
   - Show amount, description, and date
 
