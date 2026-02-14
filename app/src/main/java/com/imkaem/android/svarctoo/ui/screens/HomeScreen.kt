@@ -21,9 +21,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.imkaem.android.svarctoo.models.DummyExpenseData
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
+import java.time.ZoneId
+import java.time.format.DateTimeFormatter
 
 @Composable
 fun HomeScreen(
@@ -251,8 +250,8 @@ private fun ExpenseItem(
     description: String,
     date: java.time.Instant
 ) {
-    val formatter = SimpleDateFormat("MMM d, h:mm a", Locale.getDefault())
-    val dateString = formatter.format(Date(date.toEpochMilli()))
+    val formatter = DateTimeFormatter.ofPattern("MMM d, h:mm a")
+        .withZone(ZoneId.systemDefault())
     
     Row(
         modifier = Modifier
@@ -269,7 +268,7 @@ private fun ExpenseItem(
                 fontWeight = FontWeight.Normal
             )
             Text(
-                text = dateString,
+                text = formatter.format(date),
                 fontSize = 10.sp,
                 fontWeight = FontWeight.Light
             )
