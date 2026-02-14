@@ -9,7 +9,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -17,6 +17,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.imkaem.android.svarctoo.models.DummyExpenseData
+import com.imkaem.android.svarctoo.ui.theme.Primary
+import com.imkaem.android.svarctoo.ui.theme.Secondary
+import com.imkaem.android.svarctoo.ui.theme.Tertiary
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 
@@ -60,7 +63,8 @@ private fun DailyBudgetSection() {
         ) {
             Text(
                 text = "Daily Budget",
-                style = MaterialTheme.typography.bodyMedium
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurface
             )
             Row(
                 modifier = Modifier
@@ -70,7 +74,8 @@ private fun DailyBudgetSection() {
             ) {
                 Text(
                     text = "$33.33",
-                    style = MaterialTheme.typography.headlineLarge
+                    style = MaterialTheme.typography.headlineLarge,
+                    color = Primary
                 )
                 Button(onClick = { /* TODO: Handle add expense */ }) {
                     Text("Add Expense")
@@ -93,7 +98,8 @@ private fun TodayExpenseSummarySection() {
         ) {
             Text(
                 text = "Today's Summary",
-                style = MaterialTheme.typography.bodyMedium
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurface
             )
             
             Row(
@@ -105,31 +111,37 @@ private fun TodayExpenseSummarySection() {
                 Column {
                     Text(
                         text = "Spent",
-                        style = MaterialTheme.typography.bodySmall
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                     Text(
                         text = "$15.50",
-                        style = MaterialTheme.typography.titleLarge
+                        style = MaterialTheme.typography.titleLarge,
+                        color = Tertiary
                     )
                 }
                 Column {
                     Text(
                         text = "Remainder",
-                        style = MaterialTheme.typography.bodySmall
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                     Text(
                         text = "$17.83",
-                        style = MaterialTheme.typography.titleLarge
+                        style = MaterialTheme.typography.titleLarge,
+                        color = Primary
                     )
                 }
                 Column {
                     Text(
                         text = "Accumulated",
-                        style = MaterialTheme.typography.bodySmall
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                     Text(
                         text = "$5.25",
-                        style = MaterialTheme.typography.titleLarge
+                        style = MaterialTheme.typography.titleLarge,
+                        color = Secondary
                     )
                 }
             }
@@ -150,7 +162,8 @@ private fun CurrentMonthSummarySection() {
         ) {
             Text(
                 text = "This Month",
-                style = MaterialTheme.typography.bodyMedium
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurface
             )
             
             Row(
@@ -162,31 +175,37 @@ private fun CurrentMonthSummarySection() {
                 Column {
                     Text(
                         text = "Spent",
-                        style = MaterialTheme.typography.bodySmall
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                     Text(
                         text = "$245.80",
-                        style = MaterialTheme.typography.titleLarge
+                        style = MaterialTheme.typography.titleLarge,
+                        color = Tertiary
                     )
                 }
                 Column {
                     Text(
                         text = "Remainder",
-                        style = MaterialTheme.typography.bodySmall
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                     Text(
                         text = "$754.20",
-                        style = MaterialTheme.typography.titleLarge
+                        style = MaterialTheme.typography.titleLarge,
+                        color = Primary
                     )
                 }
                 Column {
                     Text(
                         text = "Budget",
-                        style = MaterialTheme.typography.bodySmall
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                     Text(
                         text = "$1000.00",
-                        style = MaterialTheme.typography.titleLarge
+                        style = MaterialTheme.typography.titleLarge,
+                        color = MaterialTheme.colorScheme.onSurface
                     )
                 }
             }
@@ -208,6 +227,7 @@ private fun LatestExpensesSection() {
             Text(
                 text = "Latest Expenses",
                 style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurface,
                 modifier = Modifier.padding(bottom = 12.dp)
             )
             
@@ -246,19 +266,22 @@ private fun ExpenseItem(
         ) {
             Text(
                 text = description,
-                style = MaterialTheme.typography.bodySmall
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurface
             )
             Text(
                 text = formatter.format(date),
-                style = MaterialTheme.typography.labelSmall
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
             )
         }
         Text(
             text = "$$amount",
-            style = MaterialTheme.typography.bodySmall
+            style = MaterialTheme.typography.bodySmall,
+            color = Tertiary,
         )
     }
-    Divider()
+    HorizontalDivider()
 }
 
 @Preview(showBackground = true)
