@@ -56,6 +56,14 @@
   - Set HomeScreen as the content of the main composable function
   - Verify HomeScreen renders when app starts
 
+## Step 4-Fix: Fix Nested Scrollable Components Crash
+
+- [x] Task 4-Fix.1: Resolve LazyColumn nesting issue
+  - Replace outer Column with verticalScroll with a single LazyColumn root
+  - Convert each section to items in the LazyColumn
+  - Replace inner LazyColumn in LatestExpensesSection with a regular Column using forEach
+  - Eliminates infinite constraint error and scroll conflicts
+
 ## Step 5: Create Theme & Styling
 
 - [ ] Task 5.1: Define color scheme
