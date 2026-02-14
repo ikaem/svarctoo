@@ -49,20 +49,27 @@
   - Display recent expenses in brief format
   - Show amount, description, and date
 
-## Step 4: Create Theme & Styling
+## Step 4: Render HomeScreen in MainActivity
 
-- [ ] Task 4.1: Define color scheme
-- [ ] Task 4.2: Define typography
-- [ ] Task 4.3: Apply theme to all composables
+- [ ] Task 4.1: Update MainActivity to display the HomeScreen composable
+  - Import HomeScreen composable
+  - Set HomeScreen as the content of the main composable function
+  - Verify HomeScreen renders when app starts
 
-## Step 5: Build and Test
+## Step 5: Create Theme & Styling
+
+- [ ] Task 5.1: Define color scheme
+- [ ] Task 5.2: Define typography
+- [ ] Task 5.3: Apply theme to all composables
+
+## Step 6: Build and Test
 
 1. Sync Gradle
 2. Build the project
 3. Run on emulator or device
 4. Verify all UI sections render correctly with dummy data
 
-## Step 6: Deploy
+## Step 7: Deploy
 
 1. Generate signed APK or AAB
 2. Test on multiple devices
