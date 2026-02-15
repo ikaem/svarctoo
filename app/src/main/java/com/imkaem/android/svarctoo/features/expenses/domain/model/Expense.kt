@@ -1,4 +1,4 @@
-package com.imkaem.android.svarctoo.models
+package com.imkaem.android.svarctoo.features.expenses.domain.model
 
 import java.time.Instant
 

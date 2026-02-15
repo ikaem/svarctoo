@@ -1,4 +1,4 @@
-package com.imkaem.android.svarctoo.ui.theme
+package com.imkaem.android.svarctoo.core.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

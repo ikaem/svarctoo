@@ -1,5 +1,6 @@
-package com.imkaem.android.svarctoo.models
+package com.imkaem.android.svarctoo.core.models
 
+import com.imkaem.android.svarctoo.features.expenses.domain.model.Expense
 import java.time.Instant
 import java.time.temporal.ChronoUnit
 

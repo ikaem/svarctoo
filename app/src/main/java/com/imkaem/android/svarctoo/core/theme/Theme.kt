@@ -1,4 +1,4 @@
-package com.imkaem.android.svarctoo.ui.theme
+package com.imkaem.android.svarctoo.core.theme
 
 import android.app.Activity
 import android.os.Build

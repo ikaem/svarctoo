@@ -10,8 +10,8 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.imkaem.android.svarctoo.ui.screens.HomeScreen
-import com.imkaem.android.svarctoo.ui.theme.SvarcTooTheme
+import com.imkaem.android.svarctoo.core.theme.SvarcTooTheme
+import com.imkaem.android.svarctoo.features.home.presentation.screens.HomeScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

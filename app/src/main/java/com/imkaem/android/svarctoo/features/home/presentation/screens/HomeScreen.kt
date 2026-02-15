@@ -1,4 +1,4 @@
-package com.imkaem.android.svarctoo.ui.screens
+package com.imkaem.android.svarctoo.features.home.presentation.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -16,10 +16,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.imkaem.android.svarctoo.models.DummyExpenseData
-import com.imkaem.android.svarctoo.ui.theme.Primary
-import com.imkaem.android.svarctoo.ui.theme.Secondary
-import com.imkaem.android.svarctoo.ui.theme.Tertiary
+import com.imkaem.android.svarctoo.core.models.DummyExpenseData
+import com.imkaem.android.svarctoo.core.theme.Primary
+import com.imkaem.android.svarctoo.core.theme.Secondary
+import com.imkaem.android.svarctoo.core.theme.Tertiary
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 
