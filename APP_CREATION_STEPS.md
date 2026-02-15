@@ -151,6 +151,19 @@ Create use cases for business logic:
 - [x] Task 9.5: Create `features/expenses/domain/usecase/DeleteExpenseUseCase.kt`
 - [x] Task 9.6: Each UseCase takes a repository as constructor parameter
 
+## Step 9-Fix: Use Operator Invoke Pattern in UseCases
+
+Refactor use cases to use Kotlin's `operator invoke()` for more idiomatic code:
+
+- [x] Task 9-Fix.1: Replace `execute()` with `operator invoke()` in all UseCases
+  - GetAllExpensesUseCase: `suspend operator fun invoke(): List<Expense>`
+  - GetExpenseByIdUseCase: `suspend operator fun invoke(id: Long): Expense?`
+  - AddExpenseUseCase: `suspend operator fun invoke(...): Long`
+  - UpdateExpenseUseCase: `suspend operator fun invoke(expense: Expense): Boolean`
+  - DeleteExpenseUseCase: `suspend operator fun invoke(id: Long): Boolean`
+  - Enables cleaner syntax: `useCase()` instead of `useCase.execute()`
+  - Follows Kotlin idioms and industry standards
+
 ## Step 10: Create ViewModels (Presentation Layer)
 
 Create ViewModels for managing UI state and business logic coordination:
