@@ -1,35 +1,36 @@
 package com.imkaem.android.svarctoo.features.expenses.data.repository
 
-import com.imkaem.android.svarctoo.core.models.DummyExpenseData
+import com.imkaem.android.svarctoo.features.expenses.data.datasource.ExpenseDataSource
 import com.imkaem.android.svarctoo.features.expenses.domain.model.Expense
 import com.imkaem.android.svarctoo.features.expenses.domain.repository.ExpenseRepository
+import java.time.Instant
 
-class ExpenseRepositoryImpl : ExpenseRepository {
+class ExpenseRepositoryImpl(
+    private val dataSource: ExpenseDataSource
+) : ExpenseRepository {
 
     override suspend fun getExpenses(): List<Expense> {
-        // Return a copy of the list to prevent external modification
-        return DummyExpenseData.sampleExpenses.toList()
+        return dataSource.getExpenses()
     }
 
     override suspend fun getExpense(id: Long): Expense? {
-        return DummyExpenseData.sampleExpenses.find { it.id == id }
+        return dataSource.getExpense(id)
     }
 
-    override suspend fun addExpense(expense: Expense): Boolean {
-        return DummyExpenseData.sampleExpenses.add(expense)
+    override suspend fun addExpense(
+        description: String,
+        amount: Double,
+        category: String,
+        date: Instant
+    ): Long {
+        return dataSource.addExpense(description, amount, category, date)
     }
 
     override suspend fun updateExpense(expense: Expense): Boolean {
-        val index = DummyExpenseData.sampleExpenses.indexOfFirst { it.id == expense.id }
-        return if (index != -1) {
-            DummyExpenseData.sampleExpenses[index] = expense
-            true
-        } else {
-            false
-        }
+        return dataSource.updateExpense(expense)
     }
 
     override suspend fun deleteExpense(id: Long): Boolean {
-        return DummyExpenseData.sampleExpenses.removeIf { it.id == id }
+        return dataSource.deleteExpense(id)
     }
 }
