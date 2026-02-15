@@ -144,12 +144,12 @@ Create repository and data source interfaces/implementations:
 
 Create use cases for business logic:
 
-- [ ] Task 9.1: Create `features/expenses/domain/usecase/GetAllExpensesUseCase.kt`
-- [ ] Task 9.2: Create `features/expenses/domain/usecase/GetExpenseByIdUseCase.kt`
-- [ ] Task 9.3: Create `features/expenses/domain/usecase/AddExpenseUseCase.kt`
-- [ ] Task 9.4: Create `features/expenses/domain/usecase/UpdateExpenseUseCase.kt`
-- [ ] Task 9.5: Create `features/expenses/domain/usecase/DeleteExpenseUseCase.kt`
-- [ ] Task 9.6: Each UseCase takes a repository as constructor parameter
+- [x] Task 9.1: Create `features/expenses/domain/usecase/GetAllExpensesUseCase.kt`
+- [x] Task 9.2: Create `features/expenses/domain/usecase/GetExpenseByIdUseCase.kt`
+- [x] Task 9.3: Create `features/expenses/domain/usecase/AddExpenseUseCase.kt`
+- [x] Task 9.4: Create `features/expenses/domain/usecase/UpdateExpenseUseCase.kt`
+- [x] Task 9.5: Create `features/expenses/domain/usecase/DeleteExpenseUseCase.kt`
+- [x] Task 9.6: Each UseCase takes a repository as constructor parameter
 
 ## Step 10: Create ViewModels (Presentation Layer)
 
