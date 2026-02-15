@@ -6,7 +6,7 @@ import com.imkaem.android.svarctoo.features.expenses.domain.repository.ExpenseRe
 class GetExpenseByIdUseCase(
     private val repository: ExpenseRepository
 ) {
-    suspend fun execute(id: Long): Expense? {
+    suspend operator fun invoke(id: Long): Expense? {
         return repository.getExpense(id)
     }
 }

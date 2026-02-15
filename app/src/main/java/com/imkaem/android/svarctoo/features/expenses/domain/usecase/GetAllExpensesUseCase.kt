@@ -6,7 +6,7 @@ import com.imkaem.android.svarctoo.features.expenses.domain.repository.ExpenseRe
 class GetAllExpensesUseCase(
     private val repository: ExpenseRepository
 ) {
-    suspend fun execute(): List<Expense> {
+    suspend operator fun invoke(): List<Expense> {
         return repository.getExpenses()
     }
 }

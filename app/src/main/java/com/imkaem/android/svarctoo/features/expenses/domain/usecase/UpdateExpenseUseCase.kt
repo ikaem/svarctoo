@@ -6,7 +6,7 @@ import com.imkaem.android.svarctoo.features.expenses.domain.repository.ExpenseRe
 class UpdateExpenseUseCase(
     private val repository: ExpenseRepository
 ) {
-    suspend fun execute(expense: Expense): Boolean {
+    suspend operator fun invoke(expense: Expense): Boolean {
         return repository.updateExpense(expense)
     }
 }

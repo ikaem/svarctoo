@@ -5,7 +5,7 @@ import com.imkaem.android.svarctoo.features.expenses.domain.repository.ExpenseRe
 class DeleteExpenseUseCase(
     private val repository: ExpenseRepository
 ) {
-    suspend fun execute(id: Long): Boolean {
+    suspend operator fun invoke(id: Long): Boolean {
         return repository.deleteExpense(id)
     }
 }

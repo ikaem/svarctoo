@@ -6,7 +6,7 @@ import java.time.Instant
 class AddExpenseUseCase(
     private val repository: ExpenseRepository
 ) {
-    suspend fun execute(
+    suspend operator fun invoke(
         description: String,
         amount: Double,
         category: String,
