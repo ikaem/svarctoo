@@ -5,7 +5,7 @@ import java.time.Instant
 import java.time.temporal.ChronoUnit
 
 object DummyExpenseData {
-    val sampleExpenses = listOf(
+    val sampleExpenses: MutableList<Expense> = mutableListOf(
         Expense(
             id = 1,
             description = "Coffee",
@@ -64,3 +64,4 @@ object DummyExpenseData {
         )
     )
 }
+
