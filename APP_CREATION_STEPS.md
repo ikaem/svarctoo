@@ -170,17 +170,17 @@ Create ViewModels for managing UI state and business logic coordination:
 
 **Best Practice:** One ViewModel per screen for independent state management.
 
-- [ ] Task 10.1: Create `features/home/presentation/viewmodel/HomeViewModel.kt`
+- [x] Task 10.1: Create `features/home/presentation/viewmodel/HomeViewModel.kt`
   - Define `HomeUiState` sealed class with states: Loading, Success(data), Error(message)
   - Create `MutableStateFlow<HomeUiState>` and expose as `StateFlow`
   - Add methods to fetch home data (daily budget, today's summary, month's summary, recent expenses)
   - Use ViewModelScope for coroutine operations
-- [ ] Task 10.2: Create `features/home/presentation/viewmodel/HomeUiState.kt`
+- [x] Task 10.2: Create `features/home/presentation/viewmodel/HomeUiState.kt`
   - `sealed class HomeUiState`
   - `object Loading : HomeUiState()`
   - `data class Success(val dailyBudget: Double, val todayExpenses: List<Expense>, ...)`
   - `data class Error(val message: String?) : HomeUiState()`
-- [ ] Task 10.3: Create `features/expenses/presentation/viewmodel/ExpensesViewModel.kt` (for future use)
+- [x] Task 10.3: Create `features/expenses/presentation/viewmodel/ExpensesViewModel.kt` (for future use)
   - Basic skeleton for managing expenses list screen
 
 ## Step 11: Setup Dependency Injection with Hilt
