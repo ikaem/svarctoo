@@ -125,19 +125,20 @@ app/src/main/java/com/imkaem/android/svarctoo/
 
 Create repository and data source interfaces/implementations:
 
-- [ ] Task 8.1: Create `features/expenses/domain/model/Expense.kt` data class
-- [ ] Task 8.2: Create `features/expenses/domain/repository/ExpenseRepository.kt` interface
+- [x] Task 8.1: Create `features/expenses/domain/model/Expense.kt` data class
+- [x] Task 8.2: Create `features/expenses/domain/repository/ExpenseRepository.kt` interface
   - `fun getExpenses(): List<Expense>`
-  - `fun getExpense(id: String): Expense`
-  - `fun addExpense(expense: Expense): Boolean`
+  - `fun getExpense(id: Long): Expense?`
+  - `fun addExpense(description, amount, category, date): Long` (returns generated ID)
   - `fun updateExpense(expense: Expense): Boolean`
-  - `fun deleteExpense(id: String): Boolean`
-- [ ] Task 8.3: Create `features/expenses/data/datasource/ExpenseDataSource.kt` interface
-  - Same methods as repository
-- [ ] Task 8.4: Create `features/expenses/data/repository/ExpenseRepositoryImpl.kt` implementation
-  - Implement using dummy data via ExpenseDataSource
-- [ ] Task 8.5: Create `features/expenses/data/datasource/ExpenseDataSourceImpl.kt` implementation
-  - Use DummyExpenseData as backing store
+  - `fun deleteExpense(id: Long): Boolean`
+- [x] Task 8.3: Create `features/expenses/data/datasource/ExpenseDataSource.kt` interface
+  - Same methods as repository, with ID generation in addExpense
+- [x] Task 8.4: Create `features/expenses/data/repository/ExpenseRepositoryImpl.kt` implementation
+  - Delegates to ExpenseDataSource
+- [x] Task 8.5: Create `features/expenses/data/datasource/ExpenseDataSourceImpl.kt` implementation
+  - Uses DummyExpenseData as backing store
+  - Generates auto-increment IDs (maxId + 1)
 
 ## Step 9: Implement Use Cases (Domain Layer)
 
