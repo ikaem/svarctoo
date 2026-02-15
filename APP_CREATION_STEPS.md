@@ -187,15 +187,15 @@ Create ViewModels for managing UI state and business logic coordination:
 
 Integrate HomeViewModel with HomeScreen using `viewModel()` composable without Hilt:
 
-- [ ] Task 11.1: Create a Factory function or dependency provider to create HomeViewModel
+- [x] Task 11.1: Create a Factory function or dependency provider to create HomeViewModel
   - Manually instantiate GetAllExpensesUseCase with repository
   - Create HomeViewModel with the use case
-- [ ] Task 11.2: Update `HomeScreen` composable to accept HomeViewModel parameter
-- [ ] Task 11.3: Use `viewModel()` composable in HomeScreen to get ViewModel instance
+- [x] Task 11.2: Update `HomeScreen` composable to accept HomeViewModel parameter
+- [x] Task 11.3: Use `viewModel()` composable in HomeScreen to get ViewModel instance
   - Pass factory lambda to create HomeViewModel
-- [ ] Task 11.4: Collect HomeUiState from ViewModel in HomeScreen
+- [x] Task 11.4: Collect HomeUiState from ViewModel in HomeScreen
   - Use `collectAsState()` on `uiState` StateFlow
-- [ ] Task 11.5: Render UI based on HomeUiState (Loading/Success/Error)
+- [x] Task 11.5: Render UI based on HomeUiState (Loading/Success/Error)
   - Display appropriate content for each state
 
 ## Step 12: Setup Dependency Injection with Hilt
