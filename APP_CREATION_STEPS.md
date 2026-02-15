@@ -114,12 +114,12 @@ app/src/main/java/com/imkaem/android/svarctoo/
 └── MainActivity.kt
 ```
 
-- [ ] Task 7.1: Create feature folder structure under `features/`
-- [ ] Task 7.2: Create `features/home/presentation/screens/` and move HomeScreen.kt
-- [ ] Task 7.3: Create `core/` folder and move theme files
-- [ ] Task 7.4: Move DummyExpenseData.kt to `core/models/`
-- [ ] Task 7.5: Delete old `ui/` and `models/` folders
-- [ ] Task 7.6: Update all imports throughout the app
+- [x] Task 7.1: Create feature folder structure under `features/`
+- [x] Task 7.2: Create `features/home/presentation/screens/` and move HomeScreen.kt
+- [x] Task 7.3: Create `core/` folder and move theme files
+- [x] Task 7.4: Move DummyExpenseData.kt to `core/models/`
+- [x] Task 7.5: Delete old `ui/` and `models/` folders
+- [x] Task 7.6: Update all imports throughout the app
 
 ## Step 8: Implement Data Layer Architecture
 
