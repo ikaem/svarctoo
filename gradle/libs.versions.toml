@@ -11,9 +11,9 @@ composeBom = "2024.09.00"
 # view model
 lifecycleViewModelCompose = "2.10.0"
 # hilt
-hilt = "2.51"
+hilt = "2.57.2"
 # ksp
-ksp = "2.0.21-1.0.24"
+ksp = "2.2.21-2.0.4"
 
 [libraries]
 lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycleViewModelCompose" }
