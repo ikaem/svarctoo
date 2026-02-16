@@ -241,6 +241,7 @@ Inject dependencies into ViewModels:
 - [ ] Task 13.3: Update `MainActivity.kt` to use `@AndroidEntryPoint`
 - [ ] Task 13.4: Update HomeScreen to use Hilt-injected HomeViewModel
 - [ ] Task 13.5: Verify Hilt injection works (build and test)
+- [ ] Task 13.6: Remove manual ViewModelFactory and instantiation logic from HomeScreen
 
 ## Step 14: Implement CRUD Operations with Dummy Data
 
