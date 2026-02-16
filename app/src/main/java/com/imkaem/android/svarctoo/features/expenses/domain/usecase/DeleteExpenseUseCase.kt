@@ -1,8 +1,16 @@
 package com.imkaem.android.svarctoo.features.expenses.domain.usecase
 
 import com.imkaem.android.svarctoo.features.expenses.domain.repository.ExpenseRepository
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class DeleteExpenseUseCase(
+/**
+ * UseCase for deleting an expense.
+ * Marked as @Singleton for efficiency (stateless business logic).
+ * Note: @Singleton could be removed in future if per-screen instances are needed.
+ */
+@Singleton
+class DeleteExpenseUseCase @Inject constructor(
     private val repository: ExpenseRepository
 ) {
     suspend operator fun invoke(id: Long): Boolean {
