@@ -226,7 +226,9 @@ Configure Hilt for dependency injection:
   - Provide ExpenseRepository implementation
   - UseCases auto-wired via @Inject constructors (not provided in module)
   - Architecture: Infrastructure in module (framework-agnostic), business logic auto-wired
-- [ ] Task 12.4: Create `core/di/CoreModule.kt` for shared dependencies (if needed)
+- [x] Task 12.4: Create `core/di/CoreModule.kt` for shared dependencies
+  - Placeholder for app-wide dependencies (database, preferences, logging, etc.)
+  - Ready for future expansion as app grows
 
 ## Step 13: Connect Hilt to ViewModels and Inject Dependencies
 
