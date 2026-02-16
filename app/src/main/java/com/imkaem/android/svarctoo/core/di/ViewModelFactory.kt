@@ -1,6 +1,5 @@
 package com.imkaem.android.svarctoo.core.di
 
-import com.imkaem.android.svarctoo.core.models.DummyExpenseData
 import com.imkaem.android.svarctoo.features.expenses.data.datasource.ExpenseDataSourceImpl
 import com.imkaem.android.svarctoo.features.expenses.data.repository.ExpenseRepositoryImpl
 import com.imkaem.android.svarctoo.features.expenses.domain.usecase.GetAllExpensesUseCase
@@ -14,7 +13,8 @@ object ViewModelFactory {
 
     fun createHomeViewModel(): HomeViewModel {
         // Wire up the dependency graph manually
-        val dataSource = ExpenseDataSourceImpl(DummyExpenseData.expenses)
+        // ExpenseDataSourceImpl accesses DummyExpenseData.sampleExpenses directly
+        val dataSource = ExpenseDataSourceImpl()
         val repository = ExpenseRepositoryImpl(dataSource)
         val getAllExpensesUseCase = GetAllExpensesUseCase(repository)
 
