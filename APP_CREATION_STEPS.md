@@ -198,6 +198,19 @@ Integrate HomeViewModel with HomeScreen using `viewModel()` composable without H
 - [x] Task 11.5: Render UI based on HomeUiState (Loading/Success/Error)
   - Display appropriate content for each state
 
+## Step 11-Fix: Fix ViewModelFactory and Dependencies
+
+Fix issues found during Step 11 integration:
+
+- [x] Task 11-Fix.1: Fix ExpenseDataSourceImpl instantiation in ViewModelFactory
+  - ExpenseDataSourceImpl does not accept constructor arguments
+  - Need to verify how ExpenseDataSourceImpl accesses DummyExpenseData
+  - Update ViewModelFactory instantiation accordingly
+- [x] Task 11-Fix.2: Add lifecycle-viewmodel-compose dependency to build.gradle.kts
+  - HomeScreen uses `viewModel()` composable function
+  - Requires androidx.lifecycle:lifecycle-viewmodel-compose library
+  - Add to app/build.gradle.kts dependencies
+
 ## Step 12: Setup Dependency Injection with Hilt
 
 Configure Hilt for dependency injection:
