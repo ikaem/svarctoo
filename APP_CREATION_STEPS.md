@@ -6,7 +6,7 @@
 
 - Create one branch per step with descriptive names (e.g., `feature/step-1-project-structure`, `feature/step-2-models-and-data`)
 - Branch from `master` for each step
-- After completing each subtask, mark it as done in this file and commit immediately
+- After completing each subtask, mark it as done in this file and commit immediately. use attomic commits for each subtask for simpler review and better commit history
 - Do not wait for the entire step to finish before committing and updating the markdown
 - Wait for approval before starting the next step
 - Merge to `master` only after approval
@@ -215,12 +215,17 @@ Fix issues found during Step 11 integration:
 
 Configure Hilt for dependency injection:
 
-- [ ] Task 12.1: Add Hilt dependencies to build.gradle.kts
-- [ ] Task 12.2: Create `HiltApplication.kt` or annotate existing application class
-- [ ] Task 12.3: Create `features/expenses/di/ExpensesModule.kt` Hilt module
+- [x] Task 12.1: Add Hilt dependencies to build.gradle.kts
+  - Add Hilt 2.51 and KSP 2.0.21-1.0.24
+  - Use KSP instead of KAPT for faster annotation processing
+- [x] Task 12.2: Create `HiltApplication.kt` and register in manifest
+  - Extend Application and annotate with @HiltAndroidApp
+  - Update AndroidManifest.xml to use HiltApplication as application class
+- [x] Task 12.3: Create `features/expenses/di/ExpensesModule.kt` Hilt module
   - Provide ExpenseDataSource implementation
   - Provide ExpenseRepository implementation
-  - Provide all UseCases
+  - UseCases auto-wired via @Inject constructors (not provided in module)
+  - Architecture: Infrastructure in module (framework-agnostic), business logic auto-wired
 - [ ] Task 12.4: Create `core/di/CoreModule.kt` for shared dependencies (if needed)
 
 ## Step 13: Connect Hilt to ViewModels and Inject Dependencies
